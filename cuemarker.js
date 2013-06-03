@@ -3,7 +3,8 @@
 window.cuemarker = (function () {
     'use strict';
 
-    var vid = null;
+    var vid = null,
+        seekInterval = 0.03;
 
     // Format - 00:00:00.000
     // This is the format required by WebVTT. It's very strict about it.
@@ -50,7 +51,7 @@ window.cuemarker = (function () {
         // Dir should be 'forward' or 'backward'
         function seek (dir) {
             var curTime = vid.currentTime,
-                timeDiff = (dir === 'forward') ? 0.05 : -0.05;
+                timeDiff = (dir === 'forward') ? seekInterval : -seekInterval;
 
             if (!vid.paused) {
                 vid.pause();
