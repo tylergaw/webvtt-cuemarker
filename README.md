@@ -35,3 +35,5 @@ jQuery you can access the DOM element using `get()`
 While the video is playing, pressing the "."/">" key will set an in point. Pressing
 the key again will set an out point and then log the cue time to the console. The
 next "."/">" keypress will set an in point.
+
+Now copypasta that time to your vtt file.
