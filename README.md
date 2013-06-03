@@ -18,15 +18,20 @@ times for HTML video elements.
 
 ## Usage
 
-- Include `cuemarker.js` in your super-sweet html www page!
+Include `cuemarker.js` in your super-sweet html www page!
+
 `<script src="/path/to/cuemarker.js"></script>`
-- Initialize Cuemarker by passing it the video element you want it to watch
-```Javascript
-var video = document.getElementById('my-video');
-cuemarker(video);
-```
+
+Initialize Cuemarker by passing it the video element you want it to watch
+
+    var video = document.getElementById('my-video');
+    cuemarker(video);
+
 NOTE: The element needs to be a DOM element, not a jQuery object. If you're using
 jQuery you can access the DOM element using `get()`
-```JavaScript
-var video = $('#my-video').get(0);
-```
+
+    var video = $('#my-video').get(0);
+
+While the video is playing, pressing the "."/">" key will set an in point. Pressing
+the key again will set an out point and then log the cue time to the console. The
+next "."/">" keypress will set an in point.
