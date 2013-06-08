@@ -24,7 +24,7 @@ window.cuemarker = (function () {
             return n;
         }
 
-        return _.map([hrs, mins, secs], addleadingZero).join(':');
+        return [hrs, mins, secs].map(addleadingZero).join(':');
     }
 
     // Given the in and out times, return a string to be used in WebVTT.

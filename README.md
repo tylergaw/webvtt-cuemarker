@@ -12,10 +12,6 @@ times for HTML video elements.
 2. After each out point is set, the cue time is logged to the console in WebVTT format:
 `00:01:20.123 --> 00:05:10.212`
 
-## Requirements
-
-- [Underscore](http://underscorejs.org/)
-
 ## Usage
 
 Include `cuemarker.js` in your super-sweet html www page!
