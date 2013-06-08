@@ -35,3 +35,9 @@ the key again will set an out point and then log the cue time to the console. Th
 next "."/">" keypress will set an in point.
 
 Now copypasta that time to your vtt file.
+
+## What did I learn?
+
+I learned that the native JavaScript `map` method is supported really well as of
+June 2013. I was under the impression that it was something that would not be
+widely implemented until much later. I used it here https://github.com/tylergaw/webvtt-cuemarker/blob/master/cuemarker.js#L27
