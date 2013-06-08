@@ -3,6 +3,8 @@
 Super simple helper for creating [WebVTT](http://dev.w3.org/html5/webvtt/) cue
 times for HTML video elements.
 
+Demo: http://tylergaw.github.io/webvtt-cuemarker/demo.html
+
 ## What does it do?
 
 1. Adds a few keyboard controls to given html video element;
