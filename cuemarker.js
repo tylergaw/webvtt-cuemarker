@@ -4,7 +4,7 @@ window.cuemarker = (function () {
     'use strict';
 
     var vid = null,
-        seekInterval = 0.03;
+        seekInterval = null;
 
     // Format - 00:00:00.000
     // This is the format required by WebVTT. It's very strict about it.
@@ -86,8 +86,9 @@ window.cuemarker = (function () {
         window.addEventListener('keyup', keyup, false);
     }
 
-    return function (video) {
+    return function (video, opts) {
         vid = video;
+        seekInterval = parseInt(opts.seekInterval, 10) || 0.03;
         addKeyEvents();
     };
 }());
