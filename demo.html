@@ -9,7 +9,9 @@
         <ol>
             <li>Start the video. The Space bar will play/pause.</li>
             <li>Press the period key "." once to set an in point</li>
-            <li>Press it a second time to set an out point and log the cue time to the console</li>
+            <li>Press it a second time to set an out point</li>
+            <li>By default, the cuetime will be logged to the console</li>
+            <li>Output can be changed by providing an output method</li>
         </ol>
         <video controls>
             <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
@@ -20,6 +22,7 @@
         <script src="cuemarker.js"></script>
 
         <script>
+            // The second parameter is optional
             cuemarker(document.querySelector('video'), {
                 seekInterval: '0.5',
                 output: function (cuetime) {

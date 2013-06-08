@@ -11,7 +11,7 @@ Demo: http://tylergaw.github.io/webvtt-cuemarker/demo.html
   - Space bar for play/pause toggling
   - Left/right arrow for seeking through the video
   - Period "." for marking in/out points of each cue
-2. After each out point is set, the cue time is logged to the console in WebVTT format:
+2. After each out point is set, the cue time is output in WebVTT format:
 `00:01:20.123 --> 00:05:10.212`
 
 ## Usage
@@ -31,10 +31,22 @@ jQuery you can access the DOM element using `get()`
     var video = $('#my-video').get(0);
 
 While the video is playing, pressing the "."/">" key will set an in point. Pressing
-the key again will set an out point and then log the cue time to the console. The
+the key again will set an out point and call the `output` function. The cuetime
+will be passed to `output`. The
 next "."/">" keypress will set an in point.
 
-Now copypasta that time to your vtt file.
+
+### Options
+
+You can modify the seekInterval and output by providing an options map as a second
+parameter to `cuemarker`
+
+    cuemarker(video, {
+        seekInterval: 2.5,
+        output: function (cuetime) {}
+    });
+
+Now copypasta those times to your vtt file.
 
 ## What did I learn?
 
