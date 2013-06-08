@@ -98,10 +98,13 @@ window.cuemarker = (function () {
 
     return function (video, opts) {
         vid = video;
-        seekInterval = parseInt(opts.seekInterval, 10) || 0.03;
 
-        if (isFunction(opts.output)) {
-            output = opts.output;
+        if (opts) {
+            seekInterval = parseInt(opts.seekInterval, 10) || 0.03;
+
+            if (isFunction(opts.output)) {
+                output = opts.output;
+            }
         }
 
         addKeyEvents();
