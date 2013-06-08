@@ -15,12 +15,20 @@
             <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
             <source src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
         </video>
+        <ul id="cuetimes"></ul>
 
         <script src="cuemarker.js"></script>
 
         <script>
             cuemarker(document.querySelector('video'), {
-                seekInterval: '0.5'
+                seekInterval: '0.5',
+                output: function (cuetime) {
+                    var times = document.getElementById('cuetimes'),
+                        li = document.createElement('li');
+
+                    li.innerHTML = cuetime;
+                    times.appendChild(li);
+                }
             });
         </script>
     </body>

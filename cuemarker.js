@@ -6,6 +6,12 @@ window.cuemarker = (function () {
     var vid = null,
         seekInterval = null;
 
+    // Where the cueTime is displayed. This can be changed by providing an output
+    // function to opts.
+    function output (cuetime) {
+        console.log(cuetime);
+    }
+
     // Format - 00:00:00.000
     // This is the format required by WebVTT. It's very strict about it.
     function formatTime (time) {
@@ -43,7 +49,7 @@ window.cuemarker = (function () {
                 inTime = vid.currentTime;
             }
             else {
-                console.log(getCueTime([inTime, vid.currentTime]));
+                output(getCueTime([inTime, vid.currentTime]));
                 inTime = null;
             }
         }
@@ -86,9 +92,18 @@ window.cuemarker = (function () {
         window.addEventListener('keyup', keyup, false);
     }
 
+    function isFunction (f) {
+        return typeof f === 'function';
+    }
+
     return function (video, opts) {
         vid = video;
         seekInterval = parseInt(opts.seekInterval, 10) || 0.03;
+
+        if (isFunction(opts.output)) {
+            output = opts.output;
+        }
+
         addKeyEvents();
     };
 }());
