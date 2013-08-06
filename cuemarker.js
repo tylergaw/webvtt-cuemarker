@@ -4,7 +4,7 @@ window.cuemarker = (function () {
     'use strict';
 
     var vid = null,
-        seekInterval = null;
+        seekInterval = 0.03;
 
     // Where the cueTime is displayed. This can be changed by providing an output
     // function to opts.
@@ -97,14 +97,13 @@ window.cuemarker = (function () {
     }
 
     return function (video, opts) {
+        var settings = opts || {};
         vid = video;
 
-        if (opts) {
-            seekInterval = parseInt(opts.seekInterval, 10) || 0.03;
+        seekInterval = parseInt(settings.seekInterval, 10) || seekInterval;
 
-            if (isFunction(opts.output)) {
-                output = opts.output;
-            }
+        if (isFunction(settings.output)) {
+            output = settings.output;
         }
 
         addKeyEvents();
